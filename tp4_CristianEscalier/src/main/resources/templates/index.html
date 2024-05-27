@@ -1,12 +1,261 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
+
 <meta charset="UTF-8">
-<title>Aqui el titulo</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximun-scale=1, user-scalable=no">
+<title>Pagina de Inicio</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
 </head>
+
 <body>
-	<header>
-		<h1>Hola Mundo</h1>
+
+	<header class="bg-primary text-white text-center py-3">
+		<div class="container">
+			<div class="row align-items-center">
+
+				<div class="col-md-2">
+					<img style="display: block; margin-left: auto; margin-right: auto;"
+						src="imagenes/fi-logo.png" alt="Logotipo de la Facultad"
+						class="rounded float-start img-fluid">
+				</div>
+
+				<div class="col-md-10">
+					<h1>Facultad de la Universidad Nacional de Jujuy</h1>
+					<p>
+					<h3>Contribuyendo al crecimiento de Jujuy</h3>
+				</div>
+			</div>
+		</div>
 	</header>
+
+
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary"
+		data-bs-theme="dark">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="https://www.fi.unju.edu.ar/">Inicio</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false"> Carreras </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item"
+								href="https://www.fi.unju.edu.ar/carreras/carreras-de-grado.html">Carreras
+									de Grado</a></li>
+							<li><a class="dropdown-item"
+								href="https://www.fi.unju.edu.ar/carreras/carrera-pregrado.html">Carreras
+									de Pregrado</a></li>
+						</ul></li>
+					<li class="nav-item"><a class="nav-link"
+						href="https://www.fi.unju.edu.ar/noticias/historial.html">Noticias</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="https://www.fi.unju.edu.ar/servicios/telefonos.html">Contacto</a>
+					<li class="nav-item"><a class="nav-link"
+						href="https://www.fi.unju.edu.ar/institucional/historia.html">Acerca
+							de</a></li>
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<aside class="col-md-3 bg-light p-3">
+				<h4>Menú</h4>
+				<ul class="nav flex-column">
+					<li class="nav-item"><a
+						href="https://www.fi.unju.edu.ar/servicios/biblioteca.html"
+						class="nav-link text-primary-emphasis">Biblioteca</a></li>
+					<li class="nav-item"><a
+						href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html"
+						class="nav-link text-primary-emphasis">Calendario académico</a></li>
+				</ul>
+			</aside>
+			<div id="contenido" class="col-md-9 p-3 bg-info">
+				<section id="descripcion-facultad" class="mb-4">
+					<h2>Descripción de la Facultad</h2>
+					<img src="imagenes/facultad-de-ingieneria.jpg"
+						class="mx-auto d-block"
+						alt="Facultade De Ingieneria San Salvador de Jujuy">
+					<p class="fs-5">La Facultad de Ingeniería de la Universidad
+						Nacional de Jujuy (UNJu) es una institución pública ubicada en
+						Jujuy, Argentina, dedicada a la formación de ingenieros en áreas
+						como Ingeniería Industrial, Ingeniería Informática, Ingeniería de
+						Minas e Ingeniería en Perforaciones. Cuenta con modernas
+						instalaciones, incluyendo laboratorios especializados y
+						bibliotecas, y promueve la investigación científica y la
+						vinculación con la industria para facilitar la transferencia de
+						conocimientos y tecnologías.</p>
+					<p class="fs-5">Además de su sólida formación académica, la
+						facultad ofrece actividades extracurriculares y servicios de apoyo
+						estudiantil, fomentando la integración y el desarrollo personal de
+						sus alumnos. Comprometida con el desarrollo sostenible y la
+						responsabilidad social, la Facultad de Ingeniería de la UNJu
+						trabaja en proyectos que mejoran la calidad de vida de la
+						comunidad local y prepara a sus estudiantes para enfrentar los
+						desafíos del mercado laboral y contribuir al bienestar social y
+						ambiental.</p>
+				</section>
+
+				<section id="noticias-recientes">
+					<h2>Noticias Recientes</h2>
+					<div class="articulos-contenedor"
+						style="display: flex; flex-wrap: wrap;">
+						<article style="flex: 0 0 18rem; margin-right: 10px;">
+							<div class="card" style="width: 18rem;">
+								<img src="imagenes/acta-acuerdo-perico.jpg" class="card-img-top"
+									alt="Acta de acuerdo de Perico">
+								<div class="card-body">
+									<h6>
+										<i class="bi bi-calendar"></i> 27 MAYO 2024
+									</h6>
+									<h5 class="card-title">Renovación de convenio académico
+										entre la Facultad de Ingeniería y el Municipio de la Ciudad
+										Perico</h5>
+									<p class="card-text">El jueves 23 de mayo, la Facultad de
+										Ingeniería de la UNJu firmó un acuerdo de colaboración
+										académica con la Municipalidad de Perico. Al evento asistieron
+										autoridades municipales, incluido el Intendente Rolando
+										Ficoseco, y representantes de la Facultad, como el Decano Ing.
+										Luis Alejandro Vargas y la Esp. Ing. Delia Cristina Cruz.</p>
+									<a
+										href="https://www.fi.unju.edu.ar/actas-acuerdos-convenios/4581-renovacion-de-convenio-academico-fiunju-perico.html"
+										class="btn btn-primary stretched-link">Leer más...</a>
+								</div>
+							</div>
+						</article>
+						<article style="flex: 0 0 18rem; margin-right: 10px;">
+							<div class="card" style="width: 18rem;">
+								<img src="imagenes/vacunacion-unju-2024.jpg"
+									class="card-img-top" alt="...">
+								<div class="card-body">
+									<h6>
+										<i class="bi bi-calendar"></i> 24 MAYO 2024
+									</h6>
+									<h5 class="card-title">Campaña de vacunación UNJu 2024</h5>
+									<p class="card-text">El día 29 de mayo del corriente, en el
+										Aula Pelayo Pena de la Escuela de Minas "Dr. Horacio Carrillo"
+										de la UNJu, se realizará una Jornada de Vacunación destinada a
+										Estudiantes, Personal Docentes y No Docente de la Universidad
+										Nacional de Jujuy, en el horario de 09:00 a 15:30 horas.</p>
+									<a
+										href="https://www.fi.unju.edu.ar/unju/4580-campana-de-vacunacion-unju-2024.html"
+										class="btn btn-primary stretched-link">Leer más...</a>
+								</div>
+							</div>
+						</article>
+						<article style="flex: 0 0 18rem; margin-right: 10px;">
+							<div class="card" style="width: 18rem;">
+								<img src="imagenes/diplomatura-formacion-lider.jpg"
+									class="card-img-top" alt="...">
+								<div class="card-body">
+									<h6>
+										<i class="bi bi-calendar"></i> 24 MAYO 2024
+									</h6>
+									<h5 class="card-title">Reflexiones del 2° Encuentro de la
+										Diplomatura en Formación Integral del Líder y Estrategias de
+										Conducción Consciente</h5>
+									<p class="card-text">El segundo encuentro de la Diplomatura
+										se realizó el viernes pasado en la Facultad de Ingeniería de
+										la UNJu. Fue dirigido por el Lic. Roggero Fabián Lino y la
+										Esp. Mercadal Irma Noemi de la Fundación Logosófica, con la
+										participación de la Coord. Gral C.P. De Zan Silvia Margarita y
+										el C.P Calizaya Elias Martin. La formación se centró en el
+										liderazgo consciente y estuvo dirigida a estudiantes de
+										diversas carreras de ingeniería, además de estar abierta a
+										interesados externos.</p>
+									<a
+										href="https://www.fi.unju.edu.ar/noticias-generales/4579-reflexiones-del-2-encuentro-de-la-diplomatura-en-formacion-integral-del-lider-y-estrategias-de-conduccion-consciente.html"
+										class="btn btn-primary stretched-link">Leer más</a>
+								</div>
+							</div>
+						</article>
+						<article>
+							<div class="card" style="width: 18rem;">
+								<img src="imagenes/Ingeniavoz-2024-01.png" class="card-img-top"
+									alt="..."> <img src="imagenes/cadi-caedi.png" class=""
+									alt="...">
+								<div class="card-body">
+									<h6>
+										<i class="bi bi-calendar"></i> 24 MAYO 2024
+									</h6>
+									<h5 class="card-title">CADI - CAEDI | Reunión Informativa
+										IngeniaVoz 24/05 16:30hs</h5>
+									<p class="card-text">El Comité Organizador del CADI-CAEDI
+										2024 presenta "IngeniaVoz", una oportunidad única para que los
+										estudiantes participen activamente en el congreso a través de
+										presentaciones orales sobre una amplia gama de temas
+										relacionados con la ingeniería y otras áreas, con el respaldo
+										de entrenamiento a distancia en habilidades comunicativas. Las
+										inscripciones para esta iniciativa están abiertas hasta el
+										06/06/2024, y se ofrecerá una videoconferencia el viernes
+										24/05 a las 16:30hs para brindar más detalles y responder
+										preguntas.</p>
+									<a
+										href="https://www.fi.unju.edu.ar/alumnos-noticias/4577-reunion-informativa-ingeniavoz-24-05-16-30hs.html"
+										class="btn btn-primary stretched-link">Leer más</a>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<footer id="pie-de-pagina" class="bg-dark text-white py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 text-left text-md-right mb-4 mb-md-0">
+					<p>
+					<h4>FACULTAD DE INGIENERÍA - UNJu</h4>
+					<ul class="nav flex-column text-left">
+						<li><i class="bi bi-map-fill"></i> Ítalo Palanca Nº 10</li>
+						<li class="nav-item"><i class="bi bi-globe-americas"></i> San
+							Salvador De Jujuy<br>Jujuy - Argentina</li>
+						<li><i class="bi bi-envelope"></i> <a
+							href="mailto:info@fi.unju.edu.ar">info@fi.unju.edu.ar</a></li>
+						<li><i class="bi bi-telephone"> 388-422-1576</i></li>
+					</ul>
+				</div>
+				<div class="col-md-4 text-rigth mb-3 mb-md-0">
+					<p>
+					<h4>Redes sociales</h4>
+					<ul class="nav justify-content-left"
+						style="list-style-type: none; padding-left: 0">
+						<li><a href="https://www.facebook.com/fiunju/"
+							class="nav-link text-white"><i class="bi bi-facebook"></i></a></li>
+						<li><a
+							href="https://www.youtube.com/channel/UCgS9XJlKKSYI1oJ4lIOo77A"
+							class="nav-link text-white"><i class="bi bi-youtube"></i></a></li>
+						<li><a
+							href="https://www.linkedin.com/school/facultad-de-ingenieria-unju"
+							class="nav-link text-white"><i class="bi bi-linkedin"></i></a></li>
+						<li><a href="https://www.instagram.com/fiunju/"
+							class="nav-link text-white"><i class="bi bi-instagram"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-11 text-center mt-3">
+					<p>Copyright © 2014-2024 - Facultad de Ingeniería - UNJu</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
 </body>
 </html>
