@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximun-scale=1, user-scalable=no">
+<title>Pagina de Inicio</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon"
+	type="image/vnd.microsoft.icon">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+	<header class="bg-primary-subtle text-black text-center py-3">
+		<div class="container">
+			<div class="row align-items-center">
+
+				<div class="col-md-2">
+					<img style="display: block; margin-left: auto; margin-right: auto;"
+						src="imagenes/logo-fi-unju-gran-formato-vertical-3000x2746.png" alt="Logotipo de la Facultad"
+						class="rounded float-start img-fluid">
+				</div>
+
+				<div class="col-md-10">
+					<h1>Facultad de la Universidad Nacional de Jujuy</h1>
+					<p>
+					<h3>Contribuyendo al crecimiento de Jujuy</h3>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
