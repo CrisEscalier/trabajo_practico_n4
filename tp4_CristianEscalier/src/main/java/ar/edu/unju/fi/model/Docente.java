@@ -4,29 +4,30 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Docente {
-	private int legajo;
+
+	private Integer Legajo;
 	private String nombre;
 	private String apellido;
-	private String eMail;
+	private String email;
 	private String telefono;
-	
+
 	public Docente() {
 	}
 
-	public Docente(int legajo, String nombre, String apellido, String eMail, String telefono) {
-		this.legajo = legajo;
+	public Docente(Integer legajo, String nombre, String apellido, String email, String telefono) {
+		Legajo = legajo;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.eMail = eMail;
+		this.email = email;
 		this.telefono = telefono;
 	}
 
-	public int getLegajo() {
-		return legajo;
+	public Integer getLegajo() {
+		return Legajo;
 	}
 
-	public void setLegajo(int legajo) {
-		this.legajo = legajo;
+	public void setLegajo(Integer legajo) {
+		Legajo = legajo;
 	}
 
 	public String getNombre() {
@@ -45,12 +46,12 @@ public class Docente {
 		this.apellido = apellido;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getTelefono() {
@@ -60,7 +61,5 @@ public class Docente {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	
-	
-	
+
 }

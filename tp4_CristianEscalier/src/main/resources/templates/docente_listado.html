@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+
+<title>Formulario de Carrera</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<div th:replace="~{layouts/header :: header}"></div>
+	<div class="container mt-5">
+		<h1>Lista de Docentes</h1>
+		<a th:href="@{/}" class="btn btn-primary mb-3">Volver al Inicio</a> <a
+			th:href="@{/docentes/formulario}" class="btn btn-primary mb-3">Agregar
+			Docente</a>
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Legajo</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Email</th>
+					<th>Teléfono</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="docente : ${docentes}">
+					<td th:text="${docente.legajo}">Legajo</td>
+					<td th:text="${docente.nombre}">Nombre</td>
+					<td th:text="${docente.apellido}">Apellido</td>
+					<td th:text="${docente.email}">Email</td>
+					<td th:text="${docente.telefono}">Teléfono</td>
+					<td><a
+						th:href="@{/docentes/editar/{legajo}(legajo=${docente.legajo})}"
+						class="btn btn-warning btn-sm"
+						onclick="return confirm('¿Estás seguro de modificar este docente?')">Editar</a>
+						<a
+						th:href="@{/docentes/eliminar/{legajo}(legajo=${docente.legajo})}"
+						class="btn btn-danger btn-sm"
+						onclick="return confirm('¿Estás seguro de eliminar este docente?')">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div th:replace="~{layouts/footer :: footer}"></div>
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

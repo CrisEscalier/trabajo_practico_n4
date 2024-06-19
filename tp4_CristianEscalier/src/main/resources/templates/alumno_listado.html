@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximun-scale=1, user-scalable=no">
+
+<title>Pagina de Inicio</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon"
+	type="image/vnd.microsoft.icon">
+</head>
+<body>
+<div th:replace="~{layouts/header :: header}"></div>
+	<div class="container mt-5">
+        <h1>Lista de Alumnos</h1>
+        <a th:href="@{/}" class="btn btn-primary mb-3">Volver al Inicio</a>
+        <a th:href="@{/alumnos/formulario}" class="btn btn-primary mb-3">Agregar Alumno</a>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Domicilio</th>
+                    <th>LU</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="alumno : ${alumnos}">
+                    <td th:text="${alumno.dni}">DNI</td>
+                    <td th:text="${alumno.nombre}">Nombre</td>
+                    <td th:text="${alumno.apellido}">Apellido</td>
+                    <td th:text="${alumno.email}">Email</td>
+                    <td th:text="${alumno.telefono}">Teléfono</td>
+                    <td th:text="${alumno.fechaNacimiento}">Fecha de Nacimiento</td>
+                    <td th:text="${alumno.domicilio}">Domicilio</td>
+                    <td th:text="${alumno.lu}">LU</td>
+                    <td>
+                        <a th:href="@{/alumnos/editar/{dni}(dni=${alumno.dni})}" class="btn btn-warning btn-sm" 
+                           onclick="return confirm('¿Estás seguro de modificar este alumno?')">Editar</a>
+                        <a th:href="@{/alumnos/eliminar/{dni}(dni=${alumno.dni})}" class="btn btn-danger btn-sm" 
+                           onclick="return confirm('¿Estás seguro de eliminar este alumno?')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="~{layouts/footer :: footer}"></div>
+</body>
+</html>

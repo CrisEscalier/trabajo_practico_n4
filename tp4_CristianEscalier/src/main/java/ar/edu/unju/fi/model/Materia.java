@@ -1,53 +1,40 @@
 package ar.edu.unju.fi.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+//Materia: código, nomre, curso, cantidad de horas, modalidad (virtual o presencial), docente (Docente), Carrera.
 @Component
 public class Materia {
 	
-	private int codigo;
+	private Integer codigo;
 	private String nombre;
 	private String curso;
-	private short cantidadDeHoras;
+	private Short horas;
 	private Modalidad modalidad;
-	@Autowired
+	
 	private Docente docente;
-	@Autowired
+	
 	private Carrera carrera;
 	
-	/**
-	 * Constructor vacio para la clase Materia
-	 */
 	public Materia() {
 	}
-	
-	/**
-	 * Contructor sobrecargado para la clase Materia
-	 * @param codigo
-	 * @param nombre
-	 * @param curso
-	 * @param cantidadDeHoras
-	 * @param modalidad
-	 * @param docente
-	 * @param carrera
-	 */
-	public Materia(int codigo, String nombre, String curso, short cantidadDeHoras, Modalidad modalidad, Docente docente,
+
+	public Materia(Integer codigo, String nombre, String curso, Short horas, Modalidad modalidad, Docente docente,
 			Carrera carrera) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.curso = curso;
-		this.cantidadDeHoras = cantidadDeHoras;
+		this.horas = horas;
 		this.modalidad = modalidad;
 		this.docente = docente;
 		this.carrera = carrera;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -67,12 +54,12 @@ public class Materia {
 		this.curso = curso;
 	}
 
-	public short getCantidadDeHoras() {
-		return cantidadDeHoras;
+	public Short getHoras() {
+		return horas;
 	}
 
-	public void setCantidadDeHoras(short cantidadDeHoras) {
-		this.cantidadDeHoras = cantidadDeHoras;
+	public void setHoras(Short horas) {
+		this.horas = horas;
 	}
 
 	public Modalidad getModalidad() {
@@ -98,8 +85,5 @@ public class Materia {
 	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
 	}
-	
-	
-	
 
 }

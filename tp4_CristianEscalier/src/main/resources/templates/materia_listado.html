@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+
+<title>Lista de Materias</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<div th:replace="~{layouts/header :: header}"></div>
+    <div class="container mt-5">
+        <h1>Lista de Materias</h1>
+        <a th:href="@{/}" class="btn btn-primary mb-3">Volver al Inicio</a>
+        <a th:href="@{/materias/formulario}" class="btn btn-primary mb-3">Agregar Materia</a>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Curso</th>
+                    <th>Horas</th>
+                    <th>Modalidad</th>
+                    <th>Docente</th>
+                    <th>Carrera</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="materia : ${materias}">
+                    <td th:text="${materia.codigo}">Código</td>
+                    <td th:text="${materia.nombre}">Nombre</td>
+                    <td th:text="${materia.curso}">Curso</td>
+                    <td th:text="${materia.horas}">Horas</td>
+                    <td th:text="${materia.modalidad}">Modalidad</td>
+                    <td th:text="${materia.docente.nombre + ' ' + materia.docente.apellido}">Docente</td>
+                    <td th:text="${materia.carrera.nombre}">Carrera</td>
+                    <td>
+                        <a th:href="@{/materias/editar/{codigo}(codigo=${materia.codigo})}" onclick="return confirm('¿Estás seguro de modificar esta materia?')" class="btn btn-warning btn-sm">Editar</a>
+                        <a th:href="@{/materias/eliminar/{codigo}(codigo=${materia.codigo})}" onclick="return confirm('¿Estás seguro de eliminar esta materia?')" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="~{layouts/footer :: footer}"></div>
+</body>
+</html>

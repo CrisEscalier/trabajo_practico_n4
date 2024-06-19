@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+
+<title>Formulario de Carrera</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<div th:replace="~{layouts/header :: header}"></div>
+	<div class="container mt-5">
+		<h1>Formulario de Docente</h1>
+		<form
+			th:action="@{${nuevoDocente.legajo == null} ? '/docentes/agregar' : '/docentes/modificar/' + ${nuevoDocente.legajo}}"
+			th:object="${nuevoDocente}" th:method="post">
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="legajo-addon">Legajo</span> <input
+					type="number" class="form-control" th:field="*{legajo}"
+					placeholder="Legajo" aria-label="Legajo"
+					aria-describedby="legajo-addon" required>
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="nombre-addon">Nombre</span> <input
+					type="text" class="form-control" th:field="*{nombre}"
+					placeholder="Nombre" aria-label="Nombre"
+					aria-describedby="nombre-addon" required>
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="apellido-addon">Apellido</span> <input
+					type="text" class="form-control" th:field="*{apellido}"
+					placeholder="Apellido" aria-label="Apellido"
+					aria-describedby="apellido-addon" required>
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="email-addon">Email</span> <input
+					type="email" class="form-control" th:field="*{email}"
+					placeholder="Email" aria-label="Email"
+					aria-describedby="email-addon" required>
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="telefono-addon">Teléfono</span> <input
+					type="text" class="form-control" th:field="*{telefono}"
+					placeholder="Teléfono" aria-label="Teléfono"
+					aria-describedby="telefono-addon" required>
+			</div>
+			<div th:if="${error}" class="alert alert-danger" role="alert">
+				<strong>Error: </strong><span th:text="${error}"></span>
+			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+		<a th:href="@{/docentes/lista}" class="btn btn-secondary mt-3">Ver
+			Lista de Docentes</a>
+	</div>
+	<div th:replace="~{layouts/footer :: footer}"></div>
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -2,37 +2,41 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
+//Alumno: dni, nombre, apellido, email, teléfono, fecha nacimiento, domicilio, LU.
+@Component
 public class Alumno {
 	
-	private int dni;
+	private Integer dni;
 	private String nombre;
 	private String apellido;
-	private String eMail;
+	private String email;
 	private String telefono;
 	private LocalDate fechaNacimiento;
 	private String domicilio;
-	private int libretaUniversitaria;
+	private Integer lu;
 	
 	public Alumno() {
 	}
-
-	public Alumno(int dni, String nombre, String apellido, String eMail, String telefono, LocalDate fechaNacimiento,
-			String domicilio, int libretaUniversitaria) {
+	
+	public Alumno(Integer dni, String nombre, String apellido, String email, String telefono, LocalDate fechaNacimiento,
+			String domicilio, Integer lu) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.eMail = eMail;
+		this.email = email;
 		this.telefono = telefono;
 		this.fechaNacimiento = fechaNacimiento;
 		this.domicilio = domicilio;
-		this.libretaUniversitaria = libretaUniversitaria;
+		this.lu = lu;
 	}
 
-	public int getDni() {
+	public Integer getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(Integer dni) {
 		this.dni = dni;
 	}
 
@@ -52,12 +56,12 @@ public class Alumno {
 		this.apellido = apellido;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getTelefono() {
@@ -84,15 +88,12 @@ public class Alumno {
 		this.domicilio = domicilio;
 	}
 
-	public int getLibretaUniversitaria() {
-		return libretaUniversitaria;
+	public Integer getLu() {
+		return lu;
 	}
 
-	public void setLibretaUniversitaria(int libretaUniversitaria) {
-		this.libretaUniversitaria = libretaUniversitaria;
+	public void setLu(Integer lu) {
+		this.lu = lu;
 	}
-	
-	
-	
-	
+
 }
