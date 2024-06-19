@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximun-scale=1, user-scalable=no">
+
+<title>Formulario de Alumno</title>
+
+<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="imagenes/favicon.png" rel="shortcut icon"
+	type="image/vnd.microsoft.icon">
+</head>
+<body>
+<div th:replace="~{layouts/header :: header}"></div>
+	<div class="container mt-5">
+		<h1>Formulario de Alumno</h1>
+		<form
+			th:action="@{${nuevoAlumno.dni == null} ? '/alumnos/agregar' : '/alumnos/modificar/' + ${nuevoAlumno.dni}}"
+			th:object="${nuevoAlumno}" method="post">
+
+			<div class="mb-3">
+				<label class="form-label">DNI</label> <input type="number"
+					class="form-control" th:field="*{dni}" placeholder="DNI" required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Nombre</label> <input type="text"
+					class="form-control" th:field="*{nombre}" placeholder="Nombre"
+					required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Apellido</label> <input type="text"
+					class="form-control" th:field="*{apellido}" placeholder="Apellido"
+					required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Email</label> <input type="email"
+					class="form-control" th:field="*{email}" placeholder="Email"
+					required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Teléfono</label> <input type="text"
+					class="form-control" th:field="*{telefono}" placeholder="Teléfono"
+					required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Fecha de Nacimiento</label> <input
+					type="date" class="form-control" th:field="*{fechaNacimiento}"
+					placeholder="Fecha de Nacimiento" required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Domicilio</label> <input type="text"
+					class="form-control" th:field="*{domicilio}"
+					placeholder="Domicilio" required>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">LU</label> <input type="number"
+					class="form-control" th:field="*{lu}" placeholder="LU" required>
+			</div>
+
+			<div th:if="${error}" class="alert alert-danger" role="alert">
+				<strong>Error: </strong><span th:text="${error}"></span>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+
+		<a th:href="@{/alumnos/lista}" class="btn btn-secondary mt-3">Ver
+			Lista de Alumnos</a>
+	</div>
+	<div th:replace="~{layouts/footer :: footer}"></div>
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
